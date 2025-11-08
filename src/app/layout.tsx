@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Inter } from "next/font/google";
+import { useMDXComponents } from "@/components/mdx/MDXComponents";
 import "./globals.css";
 
 const inter = Inter({

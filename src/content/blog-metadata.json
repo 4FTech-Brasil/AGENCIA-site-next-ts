@@ -1,0 +1,30 @@
+{
+  "posts": [
+    {
+      "slug": "marketing-de-produto",
+      "title": "Marketing de Produto: Como Posicionar, Destacar e Vender com Estratégia",
+      "description": "Descubra como o marketing de produto pode impulsionar suas vendas, fortalecer sua marca e criar diferenciais competitivos duradouros.",
+      "date": "2024-02-10",
+      "tags": [
+        "marketing-de-produto",
+        "posicionamento",
+        "estratégia"
+      ],
+      "readTime": "8 min",
+      "image": "/images/blog/marketing-produto.jpg"
+    },
+    {
+      "slug": "primeiro-post",
+      "title": "Como o Marketing Digital Pode Transformar Seu Negócio",
+      "description": "Descubra as estratégias mais eficazes de marketing digital para alavancar seus resultados e conquistar mais clientes.",
+      "date": "2024-01-15",
+      "tags": [
+        "marketing-digital",
+        "estratégia",
+        "crescimento"
+      ],
+      "readTime": "5 min",
+      "image": "/images/blog/marketing-digital.jpg"
+    }
+  ]
+}

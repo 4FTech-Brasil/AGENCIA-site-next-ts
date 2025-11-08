@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import createMDX from '@next/mdx';
 import WebpackObfuscator from 'webpack-obfuscator';
 
 const nextConfig: NextConfig = {
@@ -39,13 +40,27 @@ const nextConfig: NextConfig = {
         } as any, [
           'excluded\\.global\\.js$',
           'react\\.dom',
-          'next'
+          'next',
+          '\\.mdx$', // ADICIONE ESTA LINHA para excluir arquivos MDX
+          '\\.md$'   // ADICIONE ESTA LINHA para excluir arquivos MD
         ])
       );
     }
     return config;
   },
   reactCompiler: true,
+  pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
+  experimental: {
+    mdxRs: false,
+  },
 };
 
-export default nextConfig;
+const withMDX = createMDX({
+  extension: /\.mdx?$/,
+  options: {
+    remarkPlugins: [],
+    rehypePlugins: [],
+  },
+})
+
+export default withMDX(nextConfig);
