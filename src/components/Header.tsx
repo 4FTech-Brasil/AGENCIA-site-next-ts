@@ -1,28 +1,53 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 import React, { useState, useEffect } from "react";
 import { NAV_LINKS } from "../util/constants";
 import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
     };
+
     window.addEventListener("scroll", handleScroll);
+
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [pathname]);
 
   const handleSmoothScroll = (href: string) => {
     setIsMenuOpen(false);
 
+    // Se não está na home, redireciona para home com hash
+    if (!isHomePage) {
+      router.push(`/${href}`);
+      return;
+    }
+
+    // Se está na home, faz o scroll suave
     if (href.startsWith("#")) {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
+    }
+  };
+
+  const handleLinkClick = (href: string, e: React.MouseEvent) => {
+    e.preventDefault();
+
+    if (href.startsWith("#")) {
+      handleSmoothScroll(href);
+    } else {
+      router.push(href);
     }
   };
 
@@ -38,10 +63,7 @@ const Header: React.FC = () => {
             <Link
               key={link.name}
               href={link.href}
-              onClick={(e) => {
-                e.preventDefault();
-                handleSmoothScroll(link.href);
-              }}
+              onClick={(e) => handleLinkClick(link.href, e)}
               className="text-brand-light-gray hover:text-white transition-colors duration-300 font-medium"
             >
               {link.name}
@@ -66,14 +88,11 @@ const Header: React.FC = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-brand-gray pb-4">
           <nav className="flex flex-col items-center space-y-4">
-            {NAV_LINKS.map((link) => (
+            {NAV_LINKS.map((link: any) => (
               <Link
                 key={link.name}
                 href={link.href}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleSmoothScroll(link.href);
-                }}
+                onClick={(e) => handleLinkClick(link.href, e)}
                 className="text-brand-light-gray hover:text-white transition-colors duration-300 font-medium py-2"
               >
                 {link.name}

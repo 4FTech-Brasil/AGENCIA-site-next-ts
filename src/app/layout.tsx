@@ -4,6 +4,8 @@ import Footer from "@/components/Footer";
 import { Inter } from "next/font/google";
 import { useMDXComponents } from "@/components/mdx/MDXComponents";
 import "./globals.css";
+import { AuthCheck } from "@/components/authCheck";
+import { Providers } from "./providers";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -134,7 +136,7 @@ export default function RootLayout({
       </head>
       <body className={`${inter.variable} antialiased bg-gray-900 text-white font-sans overflow-x-hidden`}>
         <Header />
-        {children}
+        <Providers>{children}</Providers>
         <Footer />
       </body>
     </html>

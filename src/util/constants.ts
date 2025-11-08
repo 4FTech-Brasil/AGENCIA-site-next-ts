@@ -6,6 +6,8 @@ export const NAV_LINKS: NavLink[] = [
   { name: 'Serviços', href: '#services' },
   { name: 'Processo', href: '#portfolio' },
   { name: 'Contato', href: '#contact' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Área restrita', href: '/admin' },
 ];
 
 export const SERVICES_DATA: Service[] = [
