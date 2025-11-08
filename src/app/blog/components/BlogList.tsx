@@ -29,8 +29,24 @@ export default function BlogList({ posts, currentPage, totalPages, totalPosts }:
   return (
     <div>
       {/* Contador de posts */}
-      <div className="text-brand-light-gray mb-8">
-        Mostrando {posts.length} de {totalPosts} artigos
+      <div className="text-brand-light-gray mb-8 flex items-center gap-2">
+        {totalPosts === 0 ? (
+          "Nenhum artigo encontrado"
+        ) : (
+          <>
+            <span className="bg-brand-blue/10 text-brand-blue px-3 py-1 rounded-full text-sm">
+              {(currentPage - 1) * 6 + 1}-{Math.min(currentPage * 6, totalPosts)} de {totalPosts} {totalPosts === 1 ? "artigo" : "artigos"}
+            </span>
+            {totalPages > 1 && (
+              <>
+                <span>•</span>
+                <span>
+                  Página {currentPage} de {totalPages}
+                </span>
+              </>
+            )}
+          </>
+        )}
       </div>
 
       {/* Grid de Posts */}

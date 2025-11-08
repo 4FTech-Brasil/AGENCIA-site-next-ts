@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import fs from "fs";
 import path from "path";
+import Image from "next/image";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -42,7 +43,7 @@ const mdxComponents = {
     />
   ),
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  img: (props: any) => <img {...props} className="rounded-lg my-6 w-full max-w-2xl mx-auto shadow-lg" />,
+  img: (props: any) => <Image {...props} className="rounded-lg my-6 w-full max-w-2xl mx-auto shadow-lg" />,
 };
 
 export async function generateStaticParams() {

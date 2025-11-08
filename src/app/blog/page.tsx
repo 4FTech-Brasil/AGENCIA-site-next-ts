@@ -6,6 +6,10 @@ export const metadata: Metadata = {
   description: "Artigos sobre marketing digital, redes sociais e estratégias de crescimento",
 };
 
+interface PageProps {
+  searchParams: Promise<{ page?: string }>;
+}
+
 // Busca os dados no servidor
 async function getBlogPosts(
   page: number = 1,
@@ -30,9 +34,11 @@ async function getBlogPosts(
   };
 }
 
-export default async function BlogPage({ searchParams }: { searchParams: { page?: string } }) {
-  const page = parseInt(searchParams.page || "1");
-  const { posts, totalPosts, totalPages, currentPage } = await getBlogPosts(page);
+export default async function BlogPage({ searchParams }: PageProps) {
+  // DESESTRUTURAÇÃO COM AWAIT
+  const { page } = await searchParams;
+  const currentPage = parseInt(page || "1");
+  const { posts, totalPosts, totalPages } = await getBlogPosts(currentPage);
 
   return (
     <div className="min-h-screen bg-brand-dark py-20">
