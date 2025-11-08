@@ -1,82 +1,6 @@
 {
   "posts": [
     {
-      "slug": "1",
-      "title": "Como o Marketing Digital Pode Transformar Seu Negócio",
-      "description": "Descubra as estratégias mais eficazes de marketing digital para alavancar seus resultados e conquistar mais clientes.",
-      "date": "2024-01-15",
-      "tags": [
-        "marketing-digital",
-        "estratégia",
-        "crescimento"
-      ],
-      "readTime": "5 min",
-      "image": "/images/blog/marketing-digital.jpg"
-    },
-    {
-      "slug": "2",
-      "title": "Como o Marketing Digital Pode Transformar Seu Negócio",
-      "description": "Descubra as estratégias mais eficazes de marketing digital para alavancar seus resultados e conquistar mais clientes.",
-      "date": "2024-01-15",
-      "tags": [
-        "marketing-digital",
-        "estratégia",
-        "crescimento"
-      ],
-      "readTime": "5 min",
-      "image": "/images/blog/marketing-digital.jpg"
-    },
-    {
-      "slug": "23232",
-      "title": "23232",
-      "description": "232323",
-      "date": "2025-11-08",
-      "tags": [
-        "23232"
-      ],
-      "readTime": "5 min",
-      "image": "/images/blog/default.jpg"
-    },
-    {
-      "slug": "3",
-      "title": "Como o Marketing Digital Pode Transformar Seu Negócio",
-      "description": "Descubra as estratégias mais eficazes de marketing digital para alavancar seus resultados e conquistar mais clientes.",
-      "date": "2024-01-15",
-      "tags": [
-        "marketing-digital",
-        "estratégia",
-        "crescimento"
-      ],
-      "readTime": "5 min",
-      "image": "/images/blog/marketing-digital.jpg"
-    },
-    {
-      "slug": "4",
-      "title": "Como o Marketing Digital Pode Transformar Seu Negócio",
-      "description": "Descubra as estratégias mais eficazes de marketing digital para alavancar seus resultados e conquistar mais clientes.",
-      "date": "2024-01-15",
-      "tags": [
-        "marketing-digital",
-        "estratégia",
-        "crescimento"
-      ],
-      "readTime": "5 min",
-      "image": "/images/blog/marketing-digital.jpg"
-    },
-    {
-      "slug": "5",
-      "title": "Como o Marketing Digital Pode Transformar Seu Negócio",
-      "description": "Descubra as estratégias mais eficazes de marketing digital para alavancar seus resultados e conquistar mais clientes.",
-      "date": "2024-01-15",
-      "tags": [
-        "marketing-digital",
-        "estratégia",
-        "crescimento"
-      ],
-      "readTime": "5 min",
-      "image": "/images/blog/marketing-digital.jpg"
-    },
-    {
       "slug": "marketing-de-produto",
       "title": "Marketing de Produto: Como Posicionar, Destacar e Vender com Estratégia",
       "description": "Descubra como o marketing de produto pode impulsionar suas vendas, fortalecer sua marca e criar diferenciais competitivos duradouros.",
@@ -88,7 +12,7 @@
         "instagram"
       ],
       "readTime": "8 min",
-      "image": "/images/blog/marketing-produto.jpg"
+      "image": "/uploads/blogs/images/9f1378c5-2594-44e3-87ae-0ea5b6654a69.jpeg"
     },
     {
       "slug": "os-beneficios-de-se-posicionar-digitalmente-no-mercado-de-estetica",
@@ -101,7 +25,7 @@
         "estetica"
       ],
       "readTime": "9 min",
-      "image": "/images/blog/default.jpg"
+      "image": "/uploads/blogs/images/3221a1c8-4673-43e5-94d1-72d41d436a73.jpeg"
     },
     {
       "slug": "primeiro-post",
@@ -114,7 +38,7 @@
         "crescimento"
       ],
       "readTime": "5 min",
-      "image": "/images/blog/marketing-digital.jpg"
+      "image": "/uploads/blogs/images/3c5a0451-7468-495e-8405-977bd52d3f72.jpeg"
     }
   ]
 }

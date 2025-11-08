@@ -66,9 +66,14 @@ export default function AdminPage() {
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="flex justify-between items-center mb-8">
           <h1 className="text-3xl font-bold text-white">Gerenciar Posts MDX</h1>
-          <Link href="/admin/new" className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition-colors">
-            Novo Post MDX
-          </Link>
+          <div className="flex gap-2">
+            <Link href="/admin/new" className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition-colors">
+              Novo Post MDX
+            </Link>
+            <Link href="/admin/uploads" className="bg-brand-blue text-white px-6 py-3 rounded-lg font-semibold hover:bg-cyan-500 transition-colors">
+              Gerenciar uploads
+            </Link>
+          </div>
         </div>
 
         <div className="bg-brand-gray rounded-2xl p-6">

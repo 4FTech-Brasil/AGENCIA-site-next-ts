@@ -53,6 +53,11 @@ const nextConfig: NextConfig = {
   experimental: {
     mdxRs: false,
   },
+  images: {
+    domains: ['localhost'],
+    // Ou se estiver em produção:
+    // domains: ['seudominio.com'],
+  },
 };
 
 const withMDX = createMDX({

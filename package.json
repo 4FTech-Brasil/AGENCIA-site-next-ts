@@ -18,7 +18,8 @@
     "next": "16.0.1",
     "next-mdx-remote": "^5.0.0",
     "react": "19.2.0",
-    "react-dom": "19.2.0"
+    "react-dom": "19.2.0",
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
@@ -32,6 +33,7 @@
     "javascript-obfuscator": "^4.1.1",
     "tailwindcss": "^4",
     "typescript": "^5",
+    "uuid": "^13.0.0",
     "webpack-obfuscator": "^3.5.1"
   }
 }
