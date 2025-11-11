@@ -30,9 +30,9 @@ jobs:
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
 
-      - name: Deploy to Vercel
+      - name: Deploy to Vercel Preview
         run: |
-          npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
+          npx vercel --token=${{ secrets.VERCEL_TOKEN }} --yes
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
@@ -66,7 +66,7 @@ jobs:
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
 
-      - name: Final deployment to Vercel
+      - name: Deploy to Vercel Production
         run: |
           npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
         env:
