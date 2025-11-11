@@ -1,25 +1,30 @@
 "use client";
 import { signIn, useSession } from "next-auth/react";
 import { useEffect } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
   const { data: session, status } = useSession();
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const callbackUrl = searchParams.get("callbackUrl") || "/admin";
 
   // Se já estiver logado, redireciona
   useEffect(() => {
     if (status === "loading") return;
 
     if (session) {
+      // Pega a callbackUrl da URL sem usar useSearchParams
+      const urlParams = new URLSearchParams(window.location.search);
+      const callbackUrl = urlParams.get("callbackUrl") || "/admin";
       router.push(callbackUrl);
     }
-  }, [session, status, router, callbackUrl]);
+  }, [session, status, router]);
 
   const handleGoogleLogin = async () => {
     try {
+      // Pega a callbackUrl da URL no momento do clique
+      const urlParams = new URLSearchParams(window.location.search);
+      const callbackUrl = urlParams.get("callbackUrl") || "/admin";
+
       await signIn("google", {
         callbackUrl,
         redirect: true,
