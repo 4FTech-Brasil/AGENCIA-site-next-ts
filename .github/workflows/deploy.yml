@@ -30,6 +30,19 @@ jobs:
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
 
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: next-build
+          path: |
+            .next/
+            public/
+            package.json
+            package-lock.json
+            next.config.*
+            .env.local
+          retention-days: 1
+
   deploy:
     runs-on: ubuntu-latest
     name: Deploy to Production
@@ -39,27 +52,21 @@ jobs:
       url: https://4ftech.com.br
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: next-build
+          path: ./
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "24"
-          cache: "npm"
 
-      - name: Install dependencies
-        run: npm install --legacy-peer-deps
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
 
-      - name: Build application
-        run: npm run build -- --webpack
-        env:
-          GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
-          GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
-          NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
-          NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
-
-      - name: Deploy to Vercel
+      - name: Deploy to Vercel using pre-built artifacts
         uses: amondnet/vercel-action@v25
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
