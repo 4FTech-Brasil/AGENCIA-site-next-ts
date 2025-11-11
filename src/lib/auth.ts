@@ -1,5 +1,5 @@
 import NextAuth from 'next-auth';
-import GoogleProvider from 'next-auth/providers/google';
+import Google from 'next-auth/providers/google';
 
 // Lista de emails autorizados para /admin
 const AUTHORIZED_ADMIN_EMAILS = [
@@ -8,9 +8,9 @@ const AUTHORIZED_ADMIN_EMAILS = [
 
 export const { handlers, auth, signIn, signOut } = NextAuth({
     providers: [
-        GoogleProvider({
-            clientId: process.env.GOOGLE_CLIENT_ID!,
-            clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+        Google({
+            clientId: process.env.AUTH_GOOGLE_ID!, // Mude para AUTH_GOOGLE_ID
+            clientSecret: process.env.AUTH_GOOGLE_SECRET!, // Mude para AUTH_GOOGLE_SECRET
         })
     ],
     callbacks: {
