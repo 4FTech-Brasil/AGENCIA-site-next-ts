@@ -7,7 +7,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: Build and Create Deployment
+    name: Build and Test
 
     steps:
       - name: Checkout code
@@ -30,8 +30,7 @@ jobs:
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
 
-      - name: Deploy to Vercel (Pre-deployment)
-        if: success()
+      - name: Deploy to Vercel
         run: |
           npx vercel --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
         env:
@@ -40,7 +39,7 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
-    name: Confirm Production Deployment
+    name: Deploy to Production
     needs: build
     environment:
       name: production
