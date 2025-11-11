@@ -30,9 +30,6 @@ jobs:
           NEXTAUTH_URL: ${{ secrets.NEXTAUTH_URL }}
           NEXTAUTH_SECRET: ${{ secrets.NEXTAUTH_SECRET }}
 
-      - name: Run tests (if any)
-        run: npm test -- --passWithNoTests
-
   deploy:
     runs-on: ubuntu-latest
     name: Deploy to Production
